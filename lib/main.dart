@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simple_bank_app/features/login/pages/bloc/login_cubit.dart';
 
 import 'features/home/pages/home.dart';
 import 'features/login/pages/login.dart';
@@ -16,7 +18,10 @@ class SimpleBankApp extends StatelessWidget {
         primarySwatch: Colors.blue,
       ),
       debugShowCheckedModeBanner: false,
-      home: Login(),
+      home: BlocProvider(
+        create: (_) => LoginCubit(),
+        child: Login(),
+      ),
       routes: <String, WidgetBuilder>{
         '/home': (BuildContext context) => const Home(),
       },

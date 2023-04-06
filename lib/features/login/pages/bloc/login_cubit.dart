@@ -9,7 +9,7 @@ class LoginCubit extends Cubit<LoginState> {
     required String email,
     required String password,
   }) async {
-    state.copyWith(status: LoginStatus.success);
+    emit(state.copyWith(status: LoginStatus.success));
     return UserAccount();
   }
 }
