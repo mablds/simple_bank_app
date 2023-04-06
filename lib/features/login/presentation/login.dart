@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:simple_bank_app/features/login/pages/bloc/login_cubit.dart';
-import 'package:simple_bank_app/features/login/pages/bloc/login_state.dart';
-import 'package:simple_bank_app/features/login/pages/components/email_input.dart';
-import 'package:simple_bank_app/features/login/pages/components/password_input.dart';
+import 'package:simple_bank_app/features/home/presentation/home.dart';
+import 'package:simple_bank_app/features/login/presentation/bloc/login_cubit.dart';
+import 'package:simple_bank_app/features/login/presentation/bloc/login_state.dart';
+import 'package:simple_bank_app/features/login/presentation/components/email_input.dart';
+import 'package:simple_bank_app/features/login/presentation/components/password_input.dart';
 
 class Login extends StatelessWidget {
   Login({super.key});
@@ -22,6 +23,10 @@ class Login extends StatelessWidget {
               const SnackBar(
                 content: Text('Yay! A SnackBar!'),
               ),
+            );
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const Home()),
             );
           }
         },

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:simple_bank_app/features/login/pages/bloc/login_cubit.dart';
+import 'package:simple_bank_app/features/login/presentation/bloc/login_cubit.dart';
 
-import 'features/home/pages/home.dart';
-import 'features/login/pages/login.dart';
+import 'features/home/presentation/home.dart';
+import 'features/login/presentation/login.dart';
 
 void main() => runApp(const SimpleBankApp());
 
@@ -15,7 +15,7 @@ class SimpleBankApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.purple,
       ),
       debugShowCheckedModeBanner: false,
       home: BlocProvider(
