@@ -7,17 +7,18 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Colors.black,
+    return Scaffold(
       body: Center(
-        child: Text(
-          _appTitle,
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.lightGreen,
-            height: 5,
-            fontSize: 20,
-          ),
+        child: Column(
+          children: [
+            Container(
+              padding: const EdgeInsets.all(113.0),
+              color: Colors.purple,
+              child: Row(
+                children: [],
+              ),
+            ),
+          ],
         ),
       ),
     );
