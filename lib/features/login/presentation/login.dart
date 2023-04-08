@@ -19,11 +19,6 @@ class Login extends StatelessWidget {
       body: BlocConsumer<LoginCubit, LoginState>(
         listener: (context, state) {
           if (state.status == LoginStatus.success) {
-            ScaffoldMessenger.of(context).showSnackBar(
-              const SnackBar(
-                content: Text('Yay! A SnackBar!'),
-              ),
-            );
             Navigator.push(
               context,
               MaterialPageRoute(builder: (context) => const Home()),
