@@ -1,11 +1,11 @@
 import 'dart:io';
-
-import 'package:simple_bank_app/features/login/data/models/responses/user_account_model.dart';
-import 'package:simple_bank_app/features/login/presentation/models/controllers.dart';
-import '../../data/models/requests/login_form_model.dart';
-import 'login_state.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:dio/dio.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:simple_bank_app/features/login/presentation/models/controllers.dart';
+import 'package:simple_bank_app/features/login/data/models/responses/user_account_model.dart';
+
+import 'login_state.dart';
+import '../../data/models/requests/login_form_model.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   LoginCubit() : super(LoginState());
