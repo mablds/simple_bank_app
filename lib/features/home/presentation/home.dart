@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-
-const _appTitle = 'Simple Bank';
+import 'package:simple_bank_app/features/home/presentation/components/account_amount.dart';
+import 'package:simple_bank_app/features/login/data/models/responses/user_account_model.dart';
+import 'components/header.dart';
 
 class Home extends StatelessWidget {
-  const Home({super.key});
+  const Home({
+    super.key,
+    required this.userLogged,
+  });
+
+  final UserAccount userLogged;
 
   @override
   Widget build(BuildContext context) {
@@ -11,54 +17,8 @@ class Home extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            Container(
-              padding: const EdgeInsets.fromLTRB(20, 50, 20, 0),
-              color: Colors.purple,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Container(
-                    margin: const EdgeInsets.fromLTRB(0, 0, 0, 60.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          width: 200.0,
-                          alignment: Alignment.centerLeft,
-                          child: const Icon(
-                            Icons.person_outlined,
-                            color: Colors.white,
-                            size: 40.0,
-                          ),
-                        ),
-                        const Icon(
-                          Icons.visibility_outlined,
-                          color: Colors.white,
-                          size: 33.0,
-                        ),
-                        const Icon(
-                          Icons.help_outline,
-                          color: Colors.white,
-                          size: 33.0,
-                        ),
-                        const Icon(
-                          Icons.mark_email_unread_outlined,
-                          color: Colors.white,
-                          size: 33.0,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    color: Colors.blue,
-                    child: const Text(
-                      'Olá, Marcelo Arthur!',
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ),
-                ],
-              ),
-            ),
+            Header(userName: userLogged.owner!),
+            AccountAmount(accountValue: userLogged.value!),
           ],
         ),
       ),

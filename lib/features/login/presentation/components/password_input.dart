@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:form_field_validator/form_field_validator.dart';
+
+const _passwordInputLabel = 'Password';
+const _passwordValidatorErrorMsg = 'Insira uma senha válida';
 
 class PasswordInput extends StatelessWidget {
   const PasswordInput({
@@ -13,13 +17,8 @@ class PasswordInput extends StatelessWidget {
     return TextFormField(
       controller: controllerPassword,
       obscureText: true,
-      decoration: const InputDecoration(labelText: 'Password'),
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'Please enter your password';
-        }
-        return null;
-      },
+      decoration: const InputDecoration(labelText: _passwordInputLabel),
+      validator: MinLengthValidator(3, errorText: _passwordValidatorErrorMsg),
     );
   }
 }

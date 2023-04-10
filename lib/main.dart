@@ -22,9 +22,6 @@ class SimpleBankApp extends StatelessWidget {
         create: (_) => LoginCubit(),
         child: Login(),
       ),
-      routes: <String, WidgetBuilder>{
-        '/home': (BuildContext context) => const Home(),
-      },
     );
   }
 }

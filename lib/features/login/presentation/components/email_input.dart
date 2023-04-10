@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:form_field_validator/form_field_validator.dart';
+
+const _emailInputLabel = 'Email';
+const _emailValidatorErrorMsg = 'Insira um endereço de e-mail válido';
 
 class EmailInput extends StatelessWidget {
   const EmailInput({
@@ -14,14 +18,9 @@ class EmailInput extends StatelessWidget {
       controller: emailController,
       keyboardType: TextInputType.emailAddress,
       decoration: const InputDecoration(
-        labelText: 'Email',
+        labelText: _emailInputLabel,
       ),
-      validator: (value) {
-        if (value == null || value.isEmpty) {
-          return 'Please enter your email';
-        }
-        return null;
-      },
+      validator: EmailValidator(errorText: _emailValidatorErrorMsg),
     );
   }
 }
