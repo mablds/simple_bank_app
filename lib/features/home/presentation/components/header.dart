@@ -19,7 +19,7 @@ class Header extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                margin: const EdgeInsets.fromLTRB(0, 0, 0, 60.0),
+                margin: const EdgeInsets.fromLTRB(0, 0, 0, 50.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -56,6 +56,7 @@ class Header extends StatelessWidget {
                   'Olá, $userName!',
                   style: const TextStyle(
                     color: Colors.white,
+                    fontWeight: FontWeight.w600,
                     fontSize: 20,
                   ),
                 ),

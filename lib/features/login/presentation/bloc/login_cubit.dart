@@ -22,7 +22,10 @@ class LoginCubit extends Cubit<LoginState> {
     );
 
     if (response.statusCode != HttpStatus.ok) {
-      emit(state.copyWith(status: LoginStatus.invalidCredentials));
+      if (response.statusCode == 204 || response.statusCode == 403) {
+        emit(state.copyWith(status: LoginStatus.invalidCredentials));
+      }
+      emit(state.copyWith(status: LoginStatus.error));
     } else {
       emit(
         state.copyWith(

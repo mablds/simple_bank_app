@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:simple_bank_app/features/home/presentation/components/account_amount.dart';
+import 'package:simple_bank_app/features/home/presentation/components/value_amount.dart';
 import 'package:simple_bank_app/features/login/data/models/responses/user_account_model.dart';
 import 'components/header.dart';
+import 'components/horizontal_scroll.dart';
 
 class Home extends StatelessWidget {
   const Home({
@@ -18,7 +19,16 @@ class Home extends StatelessWidget {
         child: Column(
           children: [
             Header(userName: userLogged.owner!),
-            AccountAmount(accountValue: userLogged.value!),
+            ValueAmount(
+              accountValue: userLogged.value!,
+              containerLabel: 'Conta',
+            ),
+            const HorizontalScroll(),
+            const ValueAmount(
+              accountValue: 'R\$ 300,00',
+              containerLabel: 'Cartão de crédito',
+              valueLabel: 'Fatura atual',
+            ),
           ],
         ),
       ),
